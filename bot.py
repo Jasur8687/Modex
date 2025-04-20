@@ -55,9 +55,10 @@ async def subscribed_handler(callback_query: CallbackQuery):
 async def check_id(message: Message):
     user_id = message.text.strip()
 
-    if not user_id.isdigit() or len(user_id) != 9:
-        await message.answer("⚠ Введите корректный 9-значный ID!")
-        return
+   if not user_id.isdigit() or not (6 <= len(user_id) <= 12):
+    await message.answer("⚠ Введите корректный ID от 6 до 12 цифр!")
+    return
+
 
     try:
         async for msg in client.iter_messages(CHANNEL_ID, limit=50):
