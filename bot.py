@@ -43,7 +43,7 @@ async def cmd_start(message: Message):
 @dp.callback_query(lambda c: c.data == "subscribed")
 async def subscribed_handler(callback_query: CallbackQuery):
     keyboard = InlineKeyboardMarkup(inline_keyboard=[
-        [InlineKeyboardButton(text="🚀 Пройти регистрацию", url="https://1wrjmw.com/v3/lucky-jet-updated?p=vayp")]
+        [InlineKeyboardButton(text="🚀 Пройти регистрацию", url="https://1wrjmw.com/?open=register&p=vayp")]
     ])
     await callback_query.message.answer(
         "Отлично! Теперь пройди регистрацию на платформе, затем отправь сюда свой 9-значный ID:",
